@@ -75,6 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -200,73 +201,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="html" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="html"><span class="header-section-number">1.1</span> HTML</h2>
 <p>Starten mit einer leeren html Datei. Diese Datei sowohl in RStudio wie auch in einem Browser öffnen.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>head</code> und <code>body</code> hinzfügen:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">+    &lt;head&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">+</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">+    &lt;/head&gt;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="va">+</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="va">+    &lt;body&gt;+</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">+</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="va">+    &lt;/body&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-source-line-numbers="3-9" data-code-line-numbers="3-9"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="kw">&lt;body&gt;</span>+</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>title</code> hinzfügen:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">+        &lt;title&gt;Meine Seite&lt;/title&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-source-line-numbers="4" data-code-line-numbers="4"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>        <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Einen <code>h1</code> Titel hinzfügen:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        &lt;title&gt;Meine Seite&lt;/title&gt;</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">+        &lt;h1&gt;Meine Seite&lt;/h1&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">+        &lt;p&gt;Das ist meine Seite&lt;/p&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-source-line-numbers="8-9" data-code-line-numbers="8-9"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>        <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>        <span class="kw">&lt;h1&gt;</span>Meine Seite<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>        <span class="kw">&lt;p&gt;</span>Das ist meine Seite<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="css" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="css"><span class="header-section-number">1.2</span> CSS</h2>
 <p>Neue Datei erstellen und speichern als <code>style.css</code>.</p>
 <p>HTML elemente selektieren und stylen:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>body{</span>
+<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>body{</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">lightblue</span><span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span>: <span class="dv">sans-serif</span><span class="op">;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Nun müssen wir das css file noch in unsere html Datei einbinden:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        &lt;title&gt;Meine Seite&lt;/title&gt;</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="va">+       &lt;link rel="stylesheet" href="style.css"&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        &lt;h1&gt;Meine Seite&lt;/h1&gt;</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        &lt;p&gt;Das ist meine Seite&lt;/p&gt;</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nun müssen wir das css file noch in unsere html Datei einbinden, und zwar im <code>head</code> (siehe <a href="https://www.w3schools.com/CSS/css_howto.asp">How To Add CSS</a>):</p>
+<div class="sourceCode" id="cb6" data-source-line-numbers="6" data-code-line-numbers="6"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>```{.html .numberLines source-line-numbers="6"}</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>        <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>        <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style.css"</span><span class="kw">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>        <span class="kw">&lt;h1&gt;</span>Meine Seite<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>        <span class="kw">&lt;p&gt;</span>Das ist meine Seite<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>CSS funktioniert mit Selektoren. <code>body</code> selektiert im Prinzip die ganze Website. <code>h1</code> selektiert alle <code>h1</code> Elemente. <code>p</code> selektiert alle <code>p</code> Elemente.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>```css</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>h1{</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">text-transform</span>: <span class="dv">uppercase</span><span class="op">;</span></span>
@@ -280,21 +284,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>JavaScript ist eine Programmiersprache, die im Browser ausgeführt wird. Sie ermöglicht es, die Website dynamisch zu verändern.</p>
 <p>Der Syntax ist oftmals ähnlich wie R.</p>
 <p>Jeder Browser hat eine integrierte JS Konsole. Auf der offenen Website: <kbd>F12</kbd> drücken und dann auf <code>Console</code> klicken.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// wie R, aber nicht ganz korrekt</span></span>
+<div class="sourceCode" id="cb8" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// wie R, aber nicht ganz korrekt</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">// mit `let` deklarieren</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">// let ersetzt var</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">// const ist wie let, aber die Variable kann nicht verändert werden</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Semikolon am Ende jeder Zeile</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span><span class="op">;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span>(myname)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">// zuerst</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">// dann</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">// oder direkt</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myage <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">// let ersetzt var</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">// const ist wie let, aber die Variable kann nicht verändert werden</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Semikolon am Ende jeder Zeile</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span><span class="op">;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span>(myname)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Arbeiten mit Zahlen:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myage <span class="op">=</span> <span class="dv">2023</span><span class="op">-</span><span class="dv">1987</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb9" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myage <span class="op">=</span> <span class="dv">2023</span><span class="op">-</span><span class="dv">1987</span><span class="op">;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span>(myage)<span class="op">;</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -302,34 +314,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span>(myage_days)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>JavaScript ist das letzte Element in userem HTML Dokument, und macht unsere statische Website dynamisch. Erstellt eine neue Datei <code>script.js</code> und fügt folgendes ein:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb10" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myname <span class="op">=</span> <span class="st">"Nils Ratnaweera"</span><span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> myage <span class="op">=</span> <span class="dv">2023</span><span class="op">-</span><span class="dv">1987</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bindet das JS file in die HTML Datei ein:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        &lt;title&gt;Meine Seite&lt;/title&gt;</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        &lt;link rel="stylesheet" href="style.css"&gt;</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        &lt;h1&gt;Meine Seite&lt;/h1&gt;</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        &lt;p&gt;Das ist meine Seite&lt;/p&gt;</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="va">+       &lt;script src="script.js"&gt;&lt;/script&gt;</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bindet das JS file in die HTML Datei ein (kurz vor dem schliessenden <code>body</code> tag) (siehe <a href="https://stackoverflow.com/q/196702/4139249">Where to place JavaScript in an HTML file?</a>)</p>
+<div class="sourceCode" id="cb11" data-source-line-numbers="11" data-code-line-numbers="11"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>        <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>        <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style.css"</span><span class="kw">&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>        <span class="kw">&lt;h1&gt;</span>Meine Seite<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>        <span class="kw">&lt;p&gt;</span>Das ist meine Seite<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>        <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"script.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nun können wir in der Konsole <kbd>F12</kbd> auf die Variablen zugreifen:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>myname</span>
+<div class="sourceCode" id="cb12" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>myname</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>myage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Mit <code>console.log()</code> können wir etwas in die Konsole schreiben. In script.js:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(myname)<span class="op">;</span></span>
+<div class="sourceCode" id="cb13" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(myname)<span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(myage)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="optional-javascript-funktionen" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="optional-javascript-funktionen"><span class="header-section-number">1.3.2</span> Optional: JavaScript Funktionen</h3>
 <p>Wir haben eben unser alter in Tagen berechnet. Das können wir in eine Funktion packen:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">age_in_days</span>(year_of_birth<span class="op">,</span> year_today){</span>
+<div class="sourceCode" id="cb14" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">age_in_days</span>(year_of_birth<span class="op">,</span> year_today){</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> myage <span class="op">=</span> year_today<span class="op">-</span>year_of_birth<span class="op">;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> myage_days <span class="op">=</span> myage <span class="op">*</span> <span class="dv">365</span><span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> myage_days<span class="op">;</span></span>
@@ -339,51 +351,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mini-webapp" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="mini-webapp"><span class="header-section-number">1.4</span> Mini Webapp</h2>
 <p><code>titel</code>, <code>h1</code> und <code>p</code> in der HTML Datei ändern:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">-       &lt;title&gt;Meine Seite&lt;/title&gt;</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="va">+       &lt;title&gt;Tagesfortschritt App&lt;/title&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        &lt;link rel="stylesheet" href="style.css"&gt;</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="st">-      &lt;h1&gt;Meine Seite&lt;/h1&gt;</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="va">+      &lt;h1&gt;Tagesfortschritt&lt;/h1&gt;</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="st">-      &lt;p&gt;Das ist meine Seite&lt;/p&gt;</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="va">+      &lt;p&gt;Wie weit ist der Tag bereits fortgeschritten?&lt;/p&gt;</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>       &lt;script src="script.js"&gt;&lt;/scrip&gt;</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15" data-source-line-numbers="5,12,14" data-code-line-numbers="5,12,14"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>-       <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>+       <span class="kw">&lt;title&gt;</span>Tagesfortschritt App<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a>        <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style.css"</span><span class="kw">&gt;</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a></span>
+<span id="cb15-10"><a href="#cb15-10"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>-      <span class="kw">&lt;h1&gt;</span>Meine Seite<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>+      <span class="kw">&lt;h1&gt;</span>Tagesfortschritt<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>-      <span class="kw">&lt;p&gt;</span>Das ist meine Seite<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>+      <span class="kw">&lt;p&gt;</span>Wie weit ist der Tag bereits fortgeschritten?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>       <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"script.js"</span><span class="kw">&gt;</span><span class="op">&lt;/</span>scrip<span class="op">&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a>    <span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Progress bar hinzufügen (note to self: mit value rumspielen. label später hinzufügen):</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    &lt;head&gt;</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        &lt;title&gt;Meine Seite&lt;/title&gt;</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        &lt;title&gt;Tagesfortschritt App&lt;/title&gt;</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        &lt;link rel="stylesheet" href="style.css"&gt;</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       &lt;script src="script.js"&gt;&lt;/script&gt;</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    &lt;/head&gt;</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    &lt;body&gt;</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        &lt;h1&gt;Tagesfortschritt&lt;/h1&gt;</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        &lt;p&gt;Wie weit ist der Tag bereits fortgeschritten?&lt;/p&gt;</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="va">+       &lt;label for="progress" id="percent"&gt;&lt;/label&gt;</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="va">+       &lt;progress id = "progress" value = 0 max = 100&gt;&lt;/progress&gt;</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    &lt;/body&gt;</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In der Console die Logik für die Berechtung des Tagesfortschritts in Prozent:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> now <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<div class="sourceCode" id="cb16" data-source-line-numbers="15-16" data-code-line-numbers="15-16"><pre class="sourceCode numberSource html numberLines code-with-copy"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>        <span class="kw">&lt;title&gt;</span>Meine Seite<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>        <span class="kw">&lt;title&gt;</span>Tagesfortschritt App<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a></span>
+<span id="cb16-7"><a href="#cb16-7"></a>        <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style.css"</span><span class="kw">&gt;</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>       <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"script.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a></span>
+<span id="cb16-11"><a href="#cb16-11"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>        <span class="kw">&lt;h1&gt;</span>Tagesfortschritt<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>        <span class="kw">&lt;p&gt;</span>Wie weit ist der Tag bereits fortgeschritten?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a></span>
+<span id="cb16-15"><a href="#cb16-15"></a>+       <span class="kw">&lt;label</span> <span class="er">for</span><span class="ot">=</span><span class="st">"progress"</span> <span class="er">id</span><span class="ot">=</span><span class="st">"percent"</span><span class="kw">&gt;&lt;/label&gt;</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a>+       <span class="kw">&lt;progress</span> <span class="er">id</span> <span class="ot">=</span> <span class="st">"progress"</span> <span class="er">value</span> <span class="ot">=</span> <span class="st">0</span> <span class="er">max</span> <span class="ot">=</span> <span class="st">100</span><span class="kw">&gt;&lt;/progress&gt;</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb16-18"><a href="#cb16-18"></a></span>
+<span id="cb16-19"><a href="#cb16-19"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>In der Console</strong> die Logik für die Berechtung des Tagesfortschritts in Prozent:</p>
+<div class="sourceCode" id="cb17" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> now <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> hours_dec <span class="op">=</span> now<span class="op">.</span><span class="fu">getHours</span>() <span class="op">+</span> now<span class="op">.</span><span class="fu">getMinutes</span>()<span class="op">/</span><span class="dv">60</span> <span class="op">+</span> now<span class="op">.</span><span class="fu">getSeconds</span>()<span class="op">/</span><span class="dv">3600</span><span class="op">;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> percent <span class="op">=</span> hours_dec<span class="op">/</span><span class="dv">24</span><span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nun haben wir den Prozentwert. Diesen code in die <code>script.js</code> Datei kopieren.</p>
 <p>Nun verändern wir den Progress bar, in dem wir den <code>value</code> ändern (folgender Teil in der Konsole entwickeln)</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// verändert den Progress bar</span></span>
+<div class="sourceCode" id="cb18" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// verändert den Progress bar</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"progress"</span>)<span class="op">.</span><span class="at">value</span> <span class="op">=</span> percent</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">// verändert das label</span></span>
@@ -406,24 +418,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="optional-setinterval" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="optional-setinterval"><span class="header-section-number">1.4.2</span> Optional: <code>setInterval()</code></h3>
 <p>Aktuell müssen wir die Seite immer neu laden, um den Fortschritt zu sehen. Wir können das auch automatisieren. Dazu brauchen wir die Funktion <code>setInterval()</code>. Diese Funktion führt eine andere Funktion in einem bestimmten Intervall aus.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> now <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<div class="sourceCode" id="cb19" data-code-line-numbers=""><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> now <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> hours_dec <span class="op">=</span> now<span class="op">.</span><span class="fu">getHours</span>() <span class="op">+</span> now<span class="op">.</span><span class="fu">getMinutes</span>()<span class="op">/</span><span class="dv">60</span> <span class="op">+</span> now<span class="op">.</span><span class="fu">getSeconds</span>()<span class="op">/</span><span class="dv">3600</span><span class="op">;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> percent <span class="op">=</span> hours_dec<span class="op">/</span><span class="dv">24</span><span class="op">*</span><span class="dv">100</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"progress"</span>)<span class="op">.</span><span class="at">value</span> <span class="op">=</span> percent</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> percent_text <span class="op">=</span> percent<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">+</span><span class="st">"%"</span></span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"percent"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> percent_text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="va">+function update_progress(){</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    const now = new Date();</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    const hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    var percent = hours_dec/24*100</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    document.getElementById("progress").value = percent</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="st">-   const percent_text = percent.toFixed(2)+"%"</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    // da man sonst kein fortschritt sieht</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="va">+   const percent_text = percent.toFixed(4)+"%" </span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    document.getElementById("percent").innerHTML = percent_text</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="va">+}</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="va">+setInterval(update_progress, 100)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-source-line-numbers="1,6,8,10" data-code-line-numbers="1,6,8,10"><pre class="sourceCode numberSource js numberLines code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">+</span><span class="kw">function</span> <span class="fu">update_progress</span>(){</span>
+<span id="cb20-2"><a href="#cb20-2"></a>    <span class="kw">const</span> now <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="kw">const</span> hours_dec <span class="op">=</span> now<span class="op">.</span><span class="fu">getHours</span>() <span class="op">+</span> now<span class="op">.</span><span class="fu">getMinutes</span>()<span class="op">/</span><span class="dv">60</span> <span class="op">+</span> now<span class="op">.</span><span class="fu">getSeconds</span>()<span class="op">/</span><span class="dv">3600</span><span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="kw">var</span> percent <span class="op">=</span> hours_dec<span class="op">/</span><span class="dv">24</span><span class="op">*</span><span class="dv">100</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"progress"</span>)<span class="op">.</span><span class="at">value</span> <span class="op">=</span> percent</span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="op">-</span>   <span class="kw">const</span> percent_text <span class="op">=</span> percent<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">+</span><span class="st">"%"</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>    <span class="co">// da man sonst kein fortschritt sieht</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="op">+</span>   <span class="kw">const</span> percent_text <span class="op">=</span> percent<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="op">+</span><span class="st">"%"</span> </span>
+<span id="cb20-9"><a href="#cb20-9"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"percent"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> percent_text</span>
+<span id="cb20-10"><a href="#cb20-10"></a><span class="op">+</span>}</span>
+<span id="cb20-11"><a href="#cb20-11"></a></span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="op">+</span><span class="pp">setInterval</span>(update_progress<span class="op">,</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -679,4 +691,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

@@ -74,6 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -186,79 +187,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>die Funktion <code>shinyApp()</code>, welche das Userinterface und die Server Logik zusammenfügt.</li>
 </ul>
 <p>Starten wir, in dem wir ein R file mit diesen Elementen erstellen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){}</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Wir können das Script zeile für Zeile ausführen und die verschiedenen Objekte anschauen.</p>
 <p>Ohne Userinterface sieht das ganze noch sehr leer aus.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">-ui &lt;- c()</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">+ui &lt;- h1("Tagesfortschritt")</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){}</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">-ui &lt;- h1("Tagesfortschritt")</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="va">+ui &lt;- tagList(</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="va">+   h1("Tagesfortschritt"),</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="va">+   p("Wie Weit ist der Tag fortgeschritten?")</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="va">+)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){}</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-source-line-numbers="3-4" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="sc">-</span>ui <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="sc">+</span>ui <span class="ot">&lt;-</span> <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){}</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-source-line-numbers="3-7" data-code-line-numbers="3-7"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="sc">-</span>ui <span class="ot">&lt;-</span> <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="sc">+</span>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="sc">+</span>   <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="sc">+</span>   <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="sc">+</span>)</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){}</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nun möchten wir, wie vorher, den Tagesfortschritt ermitteln und darstellen. Zuvor hatten wir dies in JS programmiert, nun können wir dies in R programmieren.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>library(lubridate)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ui &lt;- tagList(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>     h1("Tagesfortschritt"),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     p("Wie Weit ist der Tag fortgeschritten?"),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="va">+  now &lt;- Sys.time()</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="va">+  </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="va">+  percent &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-source-line-numbers="2,11-13" data-code-line-numbers="2,11-13"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb4-5"><a href="#cb4-5"></a>     <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6"></a>     <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>),</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  )</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="sc">+</span>  now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="sc">+</span>  </span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="sc">+</span>  percent <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a>}</span>
+<span id="cb4-16"><a href="#cb4-16"></a></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Viel eleganter, v.a. um später die übersicht zu behalten, ist es, wenn wir die Berechnung in eine Funktion auslagern.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>library(lubridate)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="va">+get_percent &lt;- function(){</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="va">+  now &lt;- Sys.time()</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="va">+  diff &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="va">+  return(diff)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="va">+}</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ui &lt;- tagList(</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  h1("Tagesfortschritt"),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  p("Wie Weit ist der Tag fortgeschritten?"),</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="st">-      now &lt;- Sys.time()</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="st">-  </span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="st">-      percent &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="va">+      get_percent()</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-source-line-numbers="4-8,17-21" data-code-line-numbers="4-8,17-21"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="sc">+</span>get_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="sc">+</span>  now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="sc">+</span>  diff <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="sc">+</span>  <span class="fu">return</span>(diff)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="sc">+</span>}</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>),</span>
+<span id="cb5-13"><a href="#cb5-13"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="sc">-</span>      now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="sc">-</span>  </span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="sc">-</span>      percent <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="sc">+</span>      <span class="fu">get_percent</span>()</span>
+<span id="cb5-22"><a href="#cb5-22"></a>}</span>
+<span id="cb5-23"><a href="#cb5-23"></a></span>
+<span id="cb5-24"><a href="#cb5-24"></a></span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Wie krieg ich nun den Prozentwert in das HTML?</p>
 <p>Jetzt kommt “reactivity” in’s Spiel.</p>
 <ul>
@@ -266,90 +267,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Reactivity ist ein zentrales Element von Shiny und kann nicht umgangen werden</li>
 <li>Wer Reactivity nicht lernen kann, ohne das “Warum” zu verstehen sollte <em>unbedingt</em> <a href="https://mastering-shiny.org/reactive-motivation.html">mastering-shiny.org/reactive-motivation</a> lesen</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>library(lubridate)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>get_percent &lt;- function(x){</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  now &lt;- Sys.time()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  diff &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  return(diff)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ui &lt;- tagList(</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  h1("Tagesfortschritt"),</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  p("Wie Weit ist der Tag fortgeschritten?"),</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="va">+ textOutput("progress")</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="va">+  output$progress &lt;- renderText(get_percent())</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-source-line-numbers="13,18" data-code-line-numbers="13,18"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>get_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb6-6"><a href="#cb6-6"></a>  diff <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">return</span>(diff)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>),</span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="sc">+</span> <span class="fu">textOutput</span>(<span class="st">"progress"</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a>)</span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="sc">+</span>  output<span class="sc">$</span>progress <span class="ot">&lt;-</span> <span class="fu">renderText</span>(<span class="fu">get_percent</span>())</span>
+<span id="cb6-19"><a href="#cb6-19"></a>}</span>
+<span id="cb6-20"><a href="#cb6-20"></a></span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Um die App zu aktualisieren, müssen wir die Funktion <code>invalidateLater()</code> verwenden.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>library(lubridate)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>get_percent &lt;- function(x){</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  now &lt;- Sys.time()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  diff &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  return(diff)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ui &lt;- tagList(</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  h1("Tagesfortschritt"),</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  p("Wie Weit ist der Tag fortgeschritten?"),</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  textOutput("progress")</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  output$progress &lt;- renderText({</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="va">+   invalidateLater(100)</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="va">+   get_percent()</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-source-line-numbers="19-20" data-code-line-numbers="19-20"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>get_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  diff <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">return</span>(diff)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>}</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>),</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">textOutput</span>(<span class="st">"progress"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14"></a>)</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb7-18"><a href="#cb7-18"></a>  output<span class="sc">$</span>progress <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="sc">+</span>   <span class="fu">invalidateLater</span>(<span class="dv">100</span>)</span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="sc">+</span>   <span class="fu">get_percent</span>()</span>
+<span id="cb7-21"><a href="#cb7-21"></a>    })</span>
+<span id="cb7-22"><a href="#cb7-22"></a>}</span>
+<span id="cb7-23"><a href="#cb7-23"></a></span>
+<span id="cb7-24"><a href="#cb7-24"></a></span>
+<span id="cb7-25"><a href="#cb7-25"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Wenn wir zu 100% user HTML basiertes App rekonstruieren wollen, müssen wir noch folgenden Schitt machen:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>library(lubridate)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>get_percent &lt;- function(x){</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  now &lt;- Sys.time()</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  diff &lt;- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  return(diff)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>ui &lt;- tagList(</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  h1("Tagesfortschritt"),</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  p("Wie Weit ist der Tag fortgeschritten?"),</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  textOutput("progress"),</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="va">+ uiOutput("progress_bar")</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>server &lt;- function(input, output, session){</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  output$progress &lt;- renderText({</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>   invalidateLater(100)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>   get_percent()</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="va">+ output$progress_bar &lt;- renderUI({ </span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="va">+     </span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="va">+     invalidateLater(100)</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="va">+     percent &lt;- get_percent()</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="va">+     tags$progress(id = "progress", value = percent, max = 100)</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="va">+     </span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="va">+   })</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-source-line-numbers="15,25-31" data-code-line-numbers="15,25-31"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>get_percent <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  diff <span class="ot">&lt;-</span> ((<span class="fu">hour</span>(now) <span class="sc">+</span> <span class="fu">minute</span>(now)<span class="sc">/</span><span class="dv">60</span> <span class="sc">+</span> <span class="fu">second</span>(now)<span class="sc">/</span><span class="dv">3600</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">return</span>(diff)</span>
+<span id="cb8-9"><a href="#cb8-9"></a>}</span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a>ui <span class="ot">&lt;-</span> <span class="fu">tagList</span>(</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">h1</span>(<span class="st">"Tagesfortschritt"</span>),</span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">p</span>(<span class="st">"Wie Weit ist der Tag fortgeschritten?"</span>),</span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">textOutput</span>(<span class="st">"progress"</span>),</span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="sc">+</span> <span class="fu">uiOutput</span>(<span class="st">"progress_bar"</span>)</span>
+<span id="cb8-16"><a href="#cb8-16"></a>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a></span>
+<span id="cb8-19"><a href="#cb8-19"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session){</span>
+<span id="cb8-20"><a href="#cb8-20"></a>  output<span class="sc">$</span>progress <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb8-21"><a href="#cb8-21"></a>   <span class="fu">invalidateLater</span>(<span class="dv">100</span>)</span>
+<span id="cb8-22"><a href="#cb8-22"></a>   <span class="fu">get_percent</span>()</span>
+<span id="cb8-23"><a href="#cb8-23"></a>    })</span>
+<span id="cb8-24"><a href="#cb8-24"></a></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="sc">+</span> output<span class="sc">$</span>progress_bar <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({ </span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="sc">+</span>     </span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="sc">+</span>     <span class="fu">invalidateLater</span>(<span class="dv">100</span>)</span>
+<span id="cb8-28"><a href="#cb8-28"></a><span class="sc">+</span>     percent <span class="ot">&lt;-</span> <span class="fu">get_percent</span>()</span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="sc">+</span>     tags<span class="sc">$</span><span class="fu">progress</span>(<span class="at">id =</span> <span class="st">"progress"</span>, <span class="at">value =</span> percent, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb8-30"><a href="#cb8-30"></a><span class="sc">+</span>     </span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="sc">+</span>   })</span>
+<span id="cb8-32"><a href="#cb8-32"></a>}</span>
+<span id="cb8-33"><a href="#cb8-33"></a></span>
+<span id="cb8-34"><a href="#cb8-34"></a></span>
+<span id="cb8-35"><a href="#cb8-35"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
@@ -600,4 +601,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>
