@@ -1,0 +1,13 @@
+body{
+    background-color: lightblue;
+    font-family: sans-serif;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+#percent{
+    font-weight: bold;
+    color: rgb(146, 139, 138);
+}

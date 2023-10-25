@@ -1,0 +1,330 @@
+
+
+# Übung 1
+
+Das fertige "standalone" Skript befindet sich im Ordner `uebung_1_standalone/`, also [hier](uebung_1_standalone/index.html).
+
+## HTML 
+
+Starten mit einer leeren html Datei. Diese Datei sowohl in RStudio wie auch in einem Browser öffnen.
+
+```html
+<!DOCTYPE html>
+<html>
+
+</html>
+```
+
+
+`head` und `body` hinzfügen:
+
+```diff
+<!DOCTYPE html>
+<html>
++    <head>
++
++    </head>
++
++    <body>+
++
++    </body>
+
+</html>
+```
+
+`title` hinzfügen:
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
++        <title>Meine Seite</title>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
+```
+
+
+Einen `h1` Titel hinzfügen:
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meine Seite</title>
+    </head>
+
+    <body>
++        <h1>Meine Seite</h1>
++        <p>Das ist meine Seite</p>
+    </body>
+
+</html>
+```
+
+## CSS
+
+Neue Datei erstellen und speichern als `style.css`.
+
+
+HTML elemente selektieren und stylen:
+
+```css
+body{
+    background-color: lightblue;
+    font-family: sans-serif;
+}
+```
+
+Nun müssen wir das css file noch in unsere html Datei einbinden:
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meine Seite</title>
++       <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <h1>Meine Seite</h1>
+        <p>Das ist meine Seite</p>
+    </body>
+
+</html>
+```
+
+CSS funktioniert mit Selektoren. `body` selektiert im Prinzip die ganze Website. `h1` selektiert alle `h1` Elemente. `p` selektiert alle `p` Elemente.
+
+```css
+
+```css
+h1{
+    text-transform: uppercase;
+}
+```
+
+Wichtige weitere Selektoren: Selektion via `class` und `id`. 
+
+
+## JavaScript
+
+### Basics
+
+JavaScript ist eine Programmiersprache, die im Browser ausgeführt wird. Sie ermöglicht es, die Website dynamisch zu verändern.
+
+Der Syntax ist oftmals ähnlich wie R. 
+
+Jeder Browser hat eine integrierte JS Konsole. Auf der offenen Website: <kbd>F12</kbd> drücken und dann auf `Console` klicken.
+
+```js
+// wie R, aber nicht ganz korrekt
+myname = "Nils Ratnaweera"
+
+// mit `let` deklarieren
+let myname = "Nils Ratnaweera"
+
+// let ersetzt var
+// const ist wie let, aber die Variable kann nicht verändert werden
+
+// Semikolon am Ende jeder Zeile
+let myname = "Nils Ratnaweera";
+
+typeof(myname);
+```
+
+Arbeiten mit Zahlen:
+
+```js
+let myage = 2023-1987;
+
+typeof(myage);
+
+let myage_days = myage * 365;
+
+typeof(myage_days);
+```
+
+JavaScript ist das letzte Element in userem HTML Dokument, und macht unsere statische Website dynamisch. Erstellt eine neue Datei `script.js` und fügt folgendes ein:
+
+
+
+```js
+let myname = "Nils Ratnaweera";
+let myage = 2023-1987;
+``` 
+
+Bindet das JS file in die HTML Datei ein:
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meine Seite</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Meine Seite</h1>
+        <p>Das ist meine Seite</p>
++       <script src="script.js"></script>
+    </body>
+
+</html>
+```
+
+Nun können wir in der Konsole <kbd>F12</kbd> auf die Variablen zugreifen:
+
+```js
+myname
+myage
+```
+
+Mit `console.log()` können wir etwas in die Konsole schreiben. In script.js:
+
+```js
+console.log(myname);
+console.log(myage);
+```
+
+
+### Optional: JavaScript Funktionen
+
+Wir haben eben unser alter in Tagen berechnet. Das können wir in eine Funktion packen:
+
+```js
+function age_in_days(year_of_birth, year_today){
+    let myage = year_today-year_of_birth;
+    let myage_days = myage * 365;
+    return myage_days;
+}
+```
+
+
+## Mini Webapp
+
+
+`titel`, `h1` und `p` in der HTML Datei ändern:
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
+-       <title>Meine Seite</title>
++       <title>Tagesfortschritt App</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+-      <h1>Meine Seite</h1>
++      <h1>Tagesfortschritt</h1>
+-      <p>Das ist meine Seite</p>
++      <p>Wie weit ist der Tag bereits fortgeschritten?</p>
+       <script src="script.js"></scrip>
+    </body>
+
+</html>
+```
+
+
+Progress bar hinzufügen (note to self: mit value rumspielen. label später hinzufügen):
+
+
+```diff
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meine Seite</title>
+        <title>Tagesfortschritt App</title>
+
+        <link rel="stylesheet" href="style.css">
+       <script src="script.js"></script>
+    </head>
+
+    <body>
+        <h1>Tagesfortschritt</h1>
+        <p>Wie weit ist der Tag bereits fortgeschritten?</p>
+
++       <label for="progress" id="percent"></label>
++       <progress id = "progress" value = 0 max = 100></progress>
+    </body>
+
+</html>
+```
+
+In der Console die Logik für die Berechtung des Tagesfortschritts in Prozent:
+
+```js
+let now = new Date();
+let hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
+let percent = hours_dec/24*100
+```
+
+
+Nun haben wir den Prozentwert. Diesen code in die `script.js` Datei kopieren.
+
+Nun verändern wir den Progress bar, in dem wir den `value` ändern (folgender Teil in der Konsole entwickeln)
+
+```js
+// verändert den Progress bar
+document.getElementById("progress").value = percent
+
+// verändert das label
+document.getElementById("percent").innerHTML = percent
+
+
+// Label evt. auf 2 Nachkommastellen runden
+const percent_text = percent.toFixed(2)+"%"
+
+// verändert das label
+document.getElementById("percent").innerHTML = percent_text
+```
+
+Code in das Script file kopieren.
+
+
+### Publishen
+
+- Files in einen Ordner packen. Auf Github.zhaw.ch gehen und ein neues Repository erstellen. Files hochladen und pages aktivieren. 
+- oder netlify.com / drop
+
+
+
+### Optional: `setInterval()`
+
+
+Aktuell müssen wir die Seite immer neu laden, um den Fortschritt zu sehen. Wir können das auch automatisieren. Dazu brauchen wir die Funktion `setInterval()`. Diese Funktion führt eine andere Funktion in einem bestimmten Intervall aus. 
+
+```js
+const now = new Date();
+const hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
+var percent = hours_dec/24*100
+document.getElementById("progress").value = percent
+const percent_text = percent.toFixed(2)+"%"
+document.getElementById("percent").innerHTML = percent_text
+```
+
+```diff
++function update_progress(){
+    const now = new Date();
+    const hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
+    var percent = hours_dec/24*100
+    document.getElementById("progress").value = percent
+-   const percent_text = percent.toFixed(2)+"%"
+    // da man sonst kein fortschritt sieht
++   const percent_text = percent.toFixed(4)+"%" 
+    document.getElementById("percent").innerHTML = percent_text
++}
+
++setInterval(update_progress, 100)
+```
+
+
+
+

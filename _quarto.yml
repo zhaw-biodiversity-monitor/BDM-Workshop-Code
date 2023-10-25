@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: "BDM Workshop"
+  author: "Nils Ratnaweera"
+  date: "2023-10-24"
+  chapters:
+    - index.qmd
+    - uebung_1.qmd
+    - uebung_2.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

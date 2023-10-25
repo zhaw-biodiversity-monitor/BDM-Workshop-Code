@@ -1,0 +1,224 @@
+
+# Übung 2
+
+
+
+In R shiny generieren wir HTML aus R. CSS wird weiterhin in CSS geschrieben, JavaScript ersetzen wir durch R.
+
+Für eine shiny app braucht es im Minimum 3 dinge:
+
+- Ein User Interface in HTML
+- Eine "Server Logik" (vorher JS, jetzt eine R Funktion mit 3 Argumenten)
+- die Funktion `shinyApp()`, welche das Userinterface und die Server Logik zusammenfügt.
+
+
+Starten wir, in dem wir ein R file mit diesen Elementen erstellen:
+
+```r
+library(shiny)
+
+ui <- c()
+
+server <- function(input, output, session){}
+
+shinyApp(ui, server)
+```
+
+Wir können das Script zeile für Zeile ausführen und die verschiedenen Objekte anschauen.
+
+
+Ohne Userinterface sieht das ganze noch sehr leer aus. 
+
+```diff
+library(shiny)
+
+-ui <- c()
++ui <- h1("Tagesfortschritt")
+
+server <- function(input, output, session){}
+
+shinyApp(ui, server)
+```
+
+
+```diff
+library(shiny)
+
+-ui <- h1("Tagesfortschritt")
++ui <- tagList(
++   h1("Tagesfortschritt"),
++   p("Wie Weit ist der Tag fortgeschritten?")
++)
+
+
+server <- function(input, output, session){}
+
+shinyApp(ui, server)
+```
+
+Nun möchten wir, wie vorher, den Tagesfortschritt ermitteln und darstellen. 
+Zuvor hatten wir dies in JS programmiert, nun können wir dies in R programmieren.
+
+```diff
+library(shiny)
+library(lubridate)
+
+ui <- tagList(
+     h1("Tagesfortschritt"),
+     p("Wie Weit ist der Tag fortgeschritten?"),
+  )
+
+
+server <- function(input, output, session){
++  now <- Sys.time()
++  
++  percent <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
+
+}
+
+shinyApp(ui, server)
+```
+
+
+Viel eleganter, v.a. um später die übersicht zu behalten, ist es, wenn wir die Berechnung in eine Funktion auslagern.
+
+```diff
+library(shiny)
+library(lubridate)
+
++get_percent <- function(){
++  now <- Sys.time()
++  diff <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
++  return(diff)
++}
+
+ui <- tagList(
+  h1("Tagesfortschritt"),
+  p("Wie Weit ist der Tag fortgeschritten?"),
+)
+
+
+server <- function(input, output, session){
+-      now <- Sys.time()
+-  
+-      percent <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
+
++      get_percent()
+}
+
+
+shinyApp(ui, server)
+
+```
+
+
+
+
+
+Wie krieg ich nun den Prozentwert in das HTML? 
+
+Jetzt kommt "reactivity" in's Spiel.
+
+- Reactivity is ungewohnt und sehr gewöhnungsbedüftig
+- Reactivity ist ein zentrales Element von Shiny und kann nicht umgangen werden
+- Wer Reactivity nicht lernen kann, ohne das "Warum" zu verstehen sollte *unbedingt* [mastering-shiny.org/reactive-motivation](https://mastering-shiny.org/reactive-motivation.html) lesen
+
+```diff 
+library(shiny)
+library(lubridate)
+
+get_percent <- function(x){
+  now <- Sys.time()
+  diff <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
+  return(diff)
+}
+
+ui <- tagList(
+  h1("Tagesfortschritt"),
+  p("Wie Weit ist der Tag fortgeschritten?"),
++ textOutput("progress")
+)
+
+
+server <- function(input, output, session){
++  output$progress <- renderText(get_percent())
+}
+
+
+shinyApp(ui, server)
+```
+
+Um die App zu aktualisieren, müssen wir die Funktion `invalidateLater()` verwenden.
+
+```diff
+library(shiny)
+library(lubridate)
+
+get_percent <- function(x){
+  now <- Sys.time()
+  diff <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
+  return(diff)
+}
+
+ui <- tagList(
+  h1("Tagesfortschritt"),
+  p("Wie Weit ist der Tag fortgeschritten?"),
+  textOutput("progress")
+)
+
+
+server <- function(input, output, session){
+  output$progress <- renderText({
++   invalidateLater(100)
++   get_percent()
+    })
+}
+
+
+shinyApp(ui, server)
+
+```
+
+
+Wenn wir zu 100% user HTML basiertes App rekonstruieren wollen, müssen wir noch 
+folgenden Schitt machen:
+
+
+```diff
+
+library(shiny)
+library(lubridate)
+
+get_percent <- function(x){
+  now <- Sys.time()
+  diff <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
+  return(diff)
+}
+
+ui <- tagList(
+  h1("Tagesfortschritt"),
+  p("Wie Weit ist der Tag fortgeschritten?"),
+  textOutput("progress"),
++ uiOutput("progress_bar")
+)
+
+
+server <- function(input, output, session){
+  output$progress <- renderText({
+   invalidateLater(100)
+   get_percent()
+    })
+
++ output$progress_bar <- renderUI({ 
++     
++     invalidateLater(100)
++     percent <- get_percent()
++     tags$progress(id = "progress", value = percent, max = 100)
++     
++   })
+}
+
+
+shinyApp(ui, server)
+
+```
