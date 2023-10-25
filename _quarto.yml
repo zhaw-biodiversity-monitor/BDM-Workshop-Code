@@ -11,12 +11,10 @@ book:
     - uebung_2.qmd
 
 bibliography: references.bib
-
+filters:
+  - line-highlight
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
-
 
 

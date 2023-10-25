@@ -14,7 +14,7 @@ Für eine shiny app braucht es im Minimum 3 dinge:
 
 Starten wir, in dem wir ein R file mit diesen Elementen erstellen:
 
-```r
+```{.r .numberLines}
 library(shiny)
 
 ui <- c()
@@ -29,7 +29,7 @@ Wir können das Script zeile für Zeile ausführen und die verschiedenen Objekte
 
 Ohne Userinterface sieht das ganze noch sehr leer aus. 
 
-```diff
+```{.r .numberLines source-line-numbers="3-4"}
 library(shiny)
 
 -ui <- c()
@@ -41,7 +41,7 @@ shinyApp(ui, server)
 ```
 
 
-```diff
+```{.r .numberLines source-line-numbers="3-7"}
 library(shiny)
 
 -ui <- h1("Tagesfortschritt")
@@ -59,7 +59,7 @@ shinyApp(ui, server)
 Nun möchten wir, wie vorher, den Tagesfortschritt ermitteln und darstellen. 
 Zuvor hatten wir dies in JS programmiert, nun können wir dies in R programmieren.
 
-```diff
+```{.r .numberLines source-line-numbers="2,11-13"}
 library(shiny)
 library(lubridate)
 
@@ -82,7 +82,7 @@ shinyApp(ui, server)
 
 Viel eleganter, v.a. um später die übersicht zu behalten, ist es, wenn wir die Berechnung in eine Funktion auslagern.
 
-```diff
+```{.r .numberLines source-line-numbers="4-8,17-21"}
 library(shiny)
 library(lubridate)
 
@@ -123,7 +123,7 @@ Jetzt kommt "reactivity" in's Spiel.
 - Reactivity ist ein zentrales Element von Shiny und kann nicht umgangen werden
 - Wer Reactivity nicht lernen kann, ohne das "Warum" zu verstehen sollte *unbedingt* [mastering-shiny.org/reactive-motivation](https://mastering-shiny.org/reactive-motivation.html) lesen
 
-```diff 
+```{.r .numberLines source-line-numbers="13,18"} 
 library(shiny)
 library(lubridate)
 
@@ -150,7 +150,7 @@ shinyApp(ui, server)
 
 Um die App zu aktualisieren, müssen wir die Funktion `invalidateLater()` verwenden.
 
-```diff
+```{.r .numberLines source-line-numbers="19-20"}
 library(shiny)
 library(lubridate)
 
@@ -184,7 +184,7 @@ Wenn wir zu 100% user HTML basiertes App rekonstruieren wollen, müssen wir noch
 folgenden Schitt machen:
 
 
-```diff
+```{.r .numberLines source-line-numbers="15,25-31"}
 
 library(shiny)
 library(lubridate)

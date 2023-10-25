@@ -18,27 +18,27 @@ Starten mit einer leeren html Datei. Diese Datei sowohl in RStudio wie auch in e
 
 `head` und `body` hinzfügen:
 
-```diff
+```{.html .numberLines source-line-numbers="3-9"}
 <!DOCTYPE html>
 <html>
-+    <head>
-+
-+    </head>
-+
-+    <body>+
-+
-+    </body>
+    <head>
+
+    </head>
+
+    <body>+
+
+    </body>
 
 </html>
 ```
 
 `title` hinzfügen:
 
-```diff
+```{.html .numberLines source-line-numbers="4"}
 <!DOCTYPE html>
 <html>
     <head>
-+        <title>Meine Seite</title>
+        <title>Meine Seite</title>
     </head>
 
     <body>
@@ -51,7 +51,7 @@ Starten mit einer leeren html Datei. Diese Datei sowohl in RStudio wie auch in e
 
 Einen `h1` Titel hinzfügen:
 
-```diff
+```{.html .numberLines source-line-numbers="8-9"}
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,8 +59,8 @@ Einen `h1` Titel hinzfügen:
     </head>
 
     <body>
-+        <h1>Meine Seite</h1>
-+        <p>Das ist meine Seite</p>
+        <h1>Meine Seite</h1>
+        <p>Das ist meine Seite</p>
     </body>
 
 </html>
@@ -80,14 +80,17 @@ body{
 }
 ```
 
-Nun müssen wir das css file noch in unsere html Datei einbinden:
+Nun müssen wir das css file noch in unsere html Datei einbinden, und zwar im `head` (siehe [How To Add CSS](https://www.w3schools.com/CSS/css_howto.asp)):
 
-```diff
+```{.html .numberLines source-line-numbers="6"}
+
+
+```{.html .numberLines source-line-numbers="6"}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Meine Seite</title>
-+       <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
 
     </head>
 
@@ -127,7 +130,15 @@ Jeder Browser hat eine integrierte JS Konsole. Auf der offenen Website: <kbd>F12
 myname = "Nils Ratnaweera"
 
 // mit `let` deklarieren
-let myname = "Nils Ratnaweera"
+// zuerst
+let myname
+
+// dann
+myname = "Nils Ratnaweera"
+
+// oder direkt
+let myage = 35
+
 
 // let ersetzt var
 // const ist wie let, aber die Variable kann nicht verändert werden
@@ -159,9 +170,10 @@ let myname = "Nils Ratnaweera";
 let myage = 2023-1987;
 ``` 
 
-Bindet das JS file in die HTML Datei ein:
+Bindet das JS file in die HTML Datei ein (kurz vor dem schliessenden `body` tag)
+(siehe [Where to place JavaScript in an HTML file?](https://stackoverflow.com/q/196702/4139249))
 
-```diff
+```{.html .numberLines source-line-numbers="11"}
 <!DOCTYPE html>
 <html>
     <head>
@@ -172,7 +184,7 @@ Bindet das JS file in die HTML Datei ein:
     <body>
         <h1>Meine Seite</h1>
         <p>Das ist meine Seite</p>
-+       <script src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>
@@ -211,7 +223,7 @@ function age_in_days(year_of_birth, year_today){
 
 `titel`, `h1` und `p` in der HTML Datei ändern:
 
-```diff
+```{.html .numberLines source-line-numbers="5,12,14"}
 <!DOCTYPE html>
 <html>
     <head>
@@ -236,7 +248,7 @@ function age_in_days(year_of_birth, year_today){
 Progress bar hinzufügen (note to self: mit value rumspielen. label später hinzufügen):
 
 
-```diff
+```{.html .numberLines source-line-numbers="15-16"}
 <!DOCTYPE html>
 <html>
     <head>
@@ -258,7 +270,8 @@ Progress bar hinzufügen (note to self: mit value rumspielen. label später hinz
 </html>
 ```
 
-In der Console die Logik für die Berechtung des Tagesfortschritts in Prozent:
+**In der Console** die Logik für die Berechtung des Tagesfortschritts in Prozent:
+
 
 ```js
 let now = new Date();
@@ -310,7 +323,7 @@ const percent_text = percent.toFixed(2)+"%"
 document.getElementById("percent").innerHTML = percent_text
 ```
 
-```diff
+```{.js .numberLines source-line-numbers="1,6,8,10"}
 +function update_progress(){
     const now = new Date();
     const hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
